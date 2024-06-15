@@ -49,7 +49,7 @@ const LoginComp = () => {
   return (
     <>
       <AuthWrapper>
-        <div className="flex justify-center bg-white shadow-lg rounded-lg w-full sm:w-10/12 md:7/12 lg:w-5/12 mr-0 md:mr-20">
+        <div className="flex justify-center bg-white shadow-lg rounded-xl w-full sm:w-10/12 md:7/12 lg:w-5/12 mr-0 md:mr-20">
           {/* Header */}
           <div className="w-full py-12 px-6 md:px-20">
             <div className="">

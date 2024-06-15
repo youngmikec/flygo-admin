@@ -135,7 +135,7 @@ const SignUpComp = () => {
 
                 <div className="my-12 w-full relative">
                   <hr className="border-[1px] w-full border-lighterGray/30" />
-                  <p className="bg-white absolute p-1 -top-3 left-1/2 rounded-lg text-sm text-textBlack lato-regular">OR</p>
+                  <p className="bg-white absolute p-1 -top-3 left-1/2 rounded-xl text-sm text-textBlack lato-regular">OR</p>
                 </div>
 
                 <div className="flex justify-center">

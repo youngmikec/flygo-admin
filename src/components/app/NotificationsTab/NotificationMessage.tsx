@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { IoMailUnreadOutline, IoMailOpenOutline } from "react-icons/io5";
 import { IoIosClose } from "react-icons/io";
-import { Notification } from "./index";
+import { Notification } from '../../../models';
 
 type Props = {
   data: Notification

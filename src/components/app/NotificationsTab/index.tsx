@@ -3,12 +3,7 @@ import { CiSearch } from "react-icons/ci";
 
 import NotificationMessage from './NotificationMessage';
 import InputField from '../../../components/form/InputField';
-
-export type Notification = {
-  message: string;
-  date: string;
-  isRead: boolean
-}
+import { Notification } from '../../../models';
 
 const NotificationsTab = () => {
   const tabs: string[] = ['All', 'Unread', 'Important'];
@@ -40,7 +35,7 @@ const NotificationsTab = () => {
   return (
     <>
       <div className="w-full">
-        <div className="flex justify-between border-[1px] border-lighterGray rounded-lg pr-4 pt-4 pb-1">
+        <div className="flex justify-between border-[1px] border-lighterGray rounded-xl pr-4 pt-4 pb-1">
           <div className="flex justify-start gap-4 px-4 pt-6">
             {
               tabs.map((item: string, idx: number) => {

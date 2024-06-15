@@ -63,7 +63,7 @@ const LineChart: FC = () => {
           options={options}
           series={series}
           type={"line"}
-          height={350}
+          height={250}
         />
       </div>
     </>

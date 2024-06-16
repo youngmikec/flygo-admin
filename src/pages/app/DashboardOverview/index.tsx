@@ -20,13 +20,9 @@ import BasicTable from '../../../components/Table/BasicTable';
 import StatisticsCard from '../../../components/app/StatisticsCard';
 import ProgressBar from '../../../components/app/ProgreeBar';
 import CustomerDisplayCard from '../../../components/app/Customer/CustomerDisplayCard';
+import { Stat } from '../../../models';
 
 
-type Stat = {
-  title: string;
-  value: string;
-  imgUrl: string;
-}
 
 
 const DashboardOverview = () => {
@@ -171,7 +167,7 @@ const DashboardOverview = () => {
             {/* table container */}
             <div className="w-full">
               <div className="w-full border-[1px] border-lighterGray rounded-md h-max">
-                <h1 className="text-textBlack text-xl font-bold lato-bold mb-4 px-4 mb-4">Recent Bookings</h1>
+                <h1 className="text-textBlack text-xl font-bold lato-bold px-4 mb-4">Recent Bookings</h1>
                 <div className="w-full flex justify-start gap-4 border-b-[1px] border-lighterGray px-4 pt-6">
                   {
                     tabs.map((item: string, idx: number) => {

@@ -6,7 +6,7 @@ const StatisticsCard: FC<Props> = ({ title, value, imgUrl }) => {
   return (
     <>
       <div className="w-full rounded-xl border-[1px] border-lighterGray shadow-sm px-6 py-4">
-        <h1 className="text-textBlack text-lg lato-regular mb-4">{title}</h1>
+        <h1 className="text-textBlack text-lg font-semibold lato-regular mb-4">{title}</h1>
         <div className="flex justify-between">
           <div>
             <p className="text-textBlack font-semibold lato-bold text-4xl">{value}</p>

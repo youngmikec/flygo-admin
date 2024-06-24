@@ -27,10 +27,10 @@ const LineChart: FC = () => {
       width: 2,
       colors: ['#167EE6']
     },
-    title: {
-      text: 'Smooth Line Chart',
-      align: 'left',
-    },
+    // title: {
+    //   text: 'Smooth Line Chart',
+    //   align: 'left',
+    // },
     grid: {
       row: {
         colors: ['#f3f3f3', 'transparent'], // Alternates background color for rows

@@ -20,6 +20,7 @@ module.exports = {
       red: '#DD584F',
       textBlue: '#167EE6',
       waterBlue: '#167ee61f',
+      skyBlue: '#E7F4FF',
       'purple': '#3f3cbb',
       'midnight': '#121063',
       'metal': '#565584',

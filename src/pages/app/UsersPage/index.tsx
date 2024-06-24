@@ -1,11 +1,27 @@
+import { useState, FC } from 'react';
 import { FaPlus } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+
 import DashboardLayout from "../../../components/Layout/DashboardLayout"
 import AppButton from "../../../components/app/AppButton";
 import BasicTable from "../../../components/Table/BasicTable";
+import AppModalComp from "../../../components/app/AppModal";
+import NewUserForm from "./NewUserForm";
+import DeleteComp from "../../../components/app/DeleteModal";
+import { OpenAppModal } from '../../../store/modal';
 
 
-const UsersPage = () => {
+const UsersPage: FC = () => {
   const tabs = ['All Customers', 'Active', 'Inactive'];
+  const dispatch = useDispatch();
+  const [modalMode, setModalMode] = useState<string>('');
+  const [deleting, setDeleting] = useState<boolean>(false);
+  const handleDeleteRecord = () => console.log('Deleting');
+
+  const openModal = () => {
+    setModalMode('create');
+    dispatch(OpenAppModal())
+  };
   return (
     <>
       <DashboardLayout>
@@ -27,11 +43,12 @@ const UsersPage = () => {
               <AppButton 
                 width="max"
                 fill="fill"
-                btnIcon={<FaPlus size={20} className="text-white" />}
+                btnIcon={<FaPlus size={14} className="text-white" />}
                 iconPosition="left"
                 btnText="Add New"
                 bgColor="blue"
                 type="submit"
+                onClick={openModal}
               />
             </div>
           </div>
@@ -39,6 +56,21 @@ const UsersPage = () => {
           <BasicTable tableTab={true} tableTabs={tabs}/>
         </div>
       </DashboardLayout>
+
+      <AppModalComp width="md">
+        {
+          modalMode === 'create' && <NewUserForm />
+        }
+        {/* {
+          modalMode === 'delete' && 
+          <DeleteComp 
+            id={'fhsljfhsl'} 
+            action={handleDeleteRecord} 
+            deleting={deleting} 
+            entity={'User'}
+          />
+        } */}
+      </AppModalComp>
     </>
   )
 }

@@ -1,4 +1,5 @@
 import { FC } from "react";
+import LoadSpinner from "../LoadSpinner";
 
 type Props = {
   width?: 'full' | 'max' ;
@@ -49,7 +50,7 @@ const AppButton: FC<Props> = ({
               ${bgColor === 'gray' && `border-darkGray text-darkGray border-[1px] hover:bg-lightGray hover:text-darkGray`} 
             `
           } 
-          flex justify-center items-center py-2 px-6 rounded-[9px]
+          flex justify-center items-center py-[5px] px-6 rounded-[5px]
         `
       }
       onClick={onClick && onClick}
@@ -58,7 +59,14 @@ const AppButton: FC<Props> = ({
         (iconPosition === 'left' && btnIcon) && 
         <div className="mx-2">{ btnIcon }</div>
       }
-      { loading ? <p>loading...</p> : <p className="text-[14px] lato-bold">{btnText}</p> }
+      { loading ? 
+      (
+        <div className="flex justify-center items-center gap-4">
+          <div><LoadSpinner /></div>
+          <p>loading...</p>
+        </div>
+      )
+      : <p className="text-[14px] lato-bold">{btnText}</p> }
       { 
         (iconPosition === 'right' && btnIcon) && 
         <div className="mx-2">{ btnIcon }</div>

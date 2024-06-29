@@ -1,7 +1,12 @@
+import { useSelector } from "react-redux";
 import Navbar from "../../app/Navbar";
 import SidebarMenu from "../../app/SideBarMenu";
+import { RootState } from "../../../store";
+import AppModalComp from "../../app/AppModal";
+import LogoutModalComp from "../../app/LogoutModal";
 
 const DashboardLayout = ({ children }: any) => {
+  const showLogoutModal = useSelector((state: RootState) => state.logoutModal.displayModal)
   return (
     <>
       <div className="w-full">
@@ -15,6 +20,14 @@ const DashboardLayout = ({ children }: any) => {
           </div>
         </div>
       </div>
+
+      {
+        showLogoutModal && (
+          <AppModalComp title="Logout Modal" width="sm">
+            <LogoutModalComp />
+          </AppModalComp>
+        )
+      }
     </>
   )
 }
